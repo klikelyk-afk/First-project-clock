@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Time & Weather Hub</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+  <button id="theme-toggle" class="sun-btn">☀️</button>
+  <button id="weather-settings-btn" class="settings-btn weather-pos">⚙️</button>
+  <button id="timezone-btn" class="settings-btn region-pos">🌍</button>
+  <button id="language-btn" class="settings-btn lang-pos">🌐</button>
+
+  <div id="weather-menu" class="weather-menu">
+    <div class="menu-title" id="weather-menu-title" data-lang-key="select_city">Оберіть місто:</div>
+<div class="menu-scroll-area" id="weather-list">
+  <button class="city-opt" data-country="Ukraine" data-city="Київ" data-lat="50.45" data-lon="30.52" data-temp="+7°C" data-url="kyiv/324505">Київ</button>
+  <button class="city-opt" data-country="Ukraine" data-city="Вінниця" data-lat="49.23" data-lon="28.47" data-temp="+6°C" data-url="vinnytsya/326161">Вінниця</button>
+  <button class="city-opt" data-country="Ukraine" data-city="Дніпро" data-lat="48.47" data-lon="35.04" data-temp="+6°C" data-url="dnipro/322722">Дніпро</button>
+  <button class="city-opt" data-country="Ukraine" data-city="Донецьк" data-lat="48.01" data-lon="37.80" data-temp="+5°C" data-url="donetsk/322730">Донецьк</button>
+  <button class="city-opt" data-country="Ukraine" data-city="Житомир" data-lat="50.25" data-lon="28.66" data-temp="+5°C" data-url="zhytomyr/326442">Житомир</button>
+  <button class="city-opt" data-country="Ukraine" data-city="Запоріжжя" data-lat="47.84" data-lon="35.14" data-temp="+7°C" data-url="zaporizhzhya/326315">Запоріжжя</button>
+  <button class="city-opt" data-country="Ukraine" data-city="Львів" data-lat="49.84" data-lon="24.03" data-temp="+4°C" data-url="lviv/324561">Львів</button>
+  <button class="city-opt" data-country="Ukraine" data-city="Одеса" data-lat="46.48" data-lon="30.72" data-temp="+10°C" data-url="odesa/325343">Одеса</button>
+  <button class="city-opt" data-country="Ukraine" data-city="Полтава" data-lat="49.59" data-lon="34.55" data-temp="+5°C" data-url="poltava/325492">Полтава</button>
+  <button class="city-opt" data-country="Ukraine" data-city="Харків" data-lat="49.99" data-lon="36.23" data-temp="+1°C" data-url="kharkiv/323903">Харків</button>
+
+  <button class="city-opt" data-country="Poland" data-city="Варшава" data-lat="52.23" data-lon="21.01" data-temp="+6°C" data-url="warsaw/274663">Warszawa</button>
+  <button class="city-opt" data-country="Poland" data-city="Білосток" data-lat="53.13" data-lon="23.16" data-temp="+4°C" data-url="bialystok/275195">Białystok</button>
+  <button class="city-opt" data-country="Poland" data-city="Бидгощ" data-lat="53.12" data-lon="18.01" data-temp="+5°C" data-url="bydgoszcz/274059">Bydgoszcz</button>
+  <button class="city-opt" data-country="Poland" data-city="Вроцлав" data-lat="51.11" data-lon="17.03" data-temp="+7°C" data-url="wroclaw/273125">Wrocław</button>
+  <button class="city-opt" data-country="Poland" data-city="Гданськ" data-lat="54.35" data-lon="18.65" data-temp="+5°C" data-url="gdansk/275174">Gdańsk</button>
+  <button class="city-opt" data-country="Poland" data-city="Гдиня" data-lat="54.52" data-lon="18.53" data-temp="+5°C" data-url="gdynia/275171">Gdynia</button>
+  <button class="city-opt" data-country="Poland" data-city="Катовіце" data-lat="50.26" data-lon="19.02" data-temp="+6°C" data-url="katowice/275141">Katowice</button>
+  <button class="city-opt" data-country="Poland" data-city="Краків" data-lat="50.06" data-lon="19.94" data-temp="+5°C" data-url="krakow/274455">Kraków</button>
+  <button class="city-opt" data-country="Poland" data-city="Лодзь" data-lat="51.75" data-lon="19.46" data-temp="+6°C" data-url="lodz/274435">Łódź</button>
+  <button class="city-opt" data-country="Poland" data-city="Познань" data-lat="52.41" data-lon="16.92" data-temp="+6°C" data-url="poznan/276106">Poznań</button>
+
+  <button class="city-opt" data-country="USA" data-city="Вашингтон" data-lat="38.90" data-lon="-77.03" data-temp="+9°C" data-url="washington/327659">Washington</button>
+  <button class="city-opt" data-country="USA" data-city="Бостон" data-lat="42.36" data-lon="-71.05" data-temp="+5°C" data-url="boston/348735">Boston</button>
+  <button class="city-opt" data-country="USA" data-city="Даллас" data-lat="32.77" data-lon="-96.79" data-temp="+18°C" data-url="dallas/351194">Dallas</button>
+  <button class="city-opt" data-country="USA" data-city="Лос-Анджелес" data-lat="34.05" data-lon="-118.24" data-temp="+20°C" data-url="los-angeles/347625">Los Angeles</button>
+  <button class="city-opt" data-country="USA" data-city="Маямі" data-lat="25.76" data-lon="-80.19" data-temp="+25°C" data-url="miami/347935">Miami</button>
+  <button class="city-opt" data-country="USA" data-city="Нью-Йорк" data-lat="40.71" data-lon="-74.00" data-temp="+8°C" data-url="new-york/349727">New York</button>
+  <button class="city-opt" data-country="USA" data-city="Сан-Франциско" data-lat="37.77" data-lon="-122.41" data-temp="+16°C" data-url="san-francisco/347629">San Francisco</button>
+  <button class="city-opt" data-country="USA" data-city="Сіетл" data-lat="47.60" data-lon="-122.33" data-temp="+10°C" data-url="seattle/351409">Seattle</button>
+  <button class="city-opt" data-country="USA" data-city="Філадельфія" data-lat="39.95" data-lon="-75.16" data-temp="+9°C" data-url="philadelphia/350540">Philadelphia</button>
+  <button class="city-opt" data-country="USA" data-city="Чикаго" data-lat="41.87" data-lon="-87.62" data-temp="+4°C" data-url="chicago/348308">Chicago</button>
+
+  <button class="city-opt" data-country="UK" data-city="Лондон" data-lat="51.50" data-lon="-0.12" data-temp="+11°C" data-url="london/328328">London</button>
+  <button class="city-opt" data-country="UK" data-city="Белфаст" data-lat="54.59" data-lon="-5.93" data-temp="+9°C" data-url="belfast/327339">Belfast</button>
+  <button class="city-opt" data-country="UK" data-city="Бірмінгем" data-lat="52.48" data-lon="-1.89" data-temp="+10°C" data-url="birmingham/327242">Birmingham</button>
+  <button class="city-opt" data-country="UK" data-city="Бристоль" data-lat="51.45" data-lon="-2.58" data-temp="+11°C" data-url="bristol/327329">Bristol</button>
+  <button class="city-opt" data-country="UK" data-city="Глазго" data-lat="55.86" data-lon="-4.25" data-temp="+8°C" data-url="glasgow/321151">Glasgow</button>
+  <button class="city-opt" data-country="UK" data-city="Единбург" data-lat="55.95" data-lon="-3.18" data-temp="+8°C" data-url="edinburgh/321131">Edinburgh</button>
+  <button class="city-opt" data-country="UK" data-city="Кардіфф" data-lat="51.48" data-lon="-3.17" data-temp="+11°C" data-url="cardiff/331371">Cardiff</button>
+  <button class="city-opt" data-country="UK" data-city="Ліверпуль" data-lat="53.40" data-lon="-2.99" data-temp="+10°C" data-url="liverpool/329548">Liverpool</button>
+  <button class="city-opt" data-country="UK" data-city="Манчестер" data-lat="53.48" data-lon="-2.24" data-temp="+10°C" data-url="manchester/329260">Manchester</button>
+  <button class="city-opt" data-country="UK" data-city="Шеффілд" data-lat="53.38" data-lon="-1.47" data-temp="+10°C" data-url="sheffield/331163">Sheffield</button>
+</div>
+  </div>
+
+  <div id="timezone-menu" class="weather-menu region-menu">
+    <div class="menu-title" data-lang-key="select_country">Оберіть країну:</div>
+    <div class="menu-scroll-area">
+      <button class="tz-opt" data-id="Ukraine" data-city-uk="Київ, Україна" data-city-en="Kyiv, Ukraine" data-city-pl="Kijów, Ukraina" data-tz="Europe/Kyiv">🇺🇦 Україна</button>
+      <button class="tz-opt" data-id="UK" data-city-uk="Лондон, Великобританія" data-city-en="London, UK" data-city-pl="Londyn, Wielka Brytania" data-tz="Europe/London">🇬🇧 Great Britain</button>
+      <button class="tz-opt" data-id="Poland" data-city-uk="Варшава, Польща" data-city-en="Warsaw, Poland" data-city-pl="Warszawa, Polska" data-tz="Europe/Warsaw">🇵🇱 Polska</button>
+      <button class="tz-opt" data-id="USA" data-city-uk="Нью-Йорк, США" data-city-en="New York, USA" data-city-pl="Nowy Jork, USA" data-tz="America/New_York">🇺🇸 USA</button>
+    </div>
+  </div>
+
+  <div id="language-menu" class="weather-menu lang-menu">
+    <div class="menu-title" data-lang-key="select_lang">Оберіть мову:</div>
+    <div class="menu-scroll-area">
+      <button class="lang-opt" data-value="uk">🇺🇦 Українська</button>
+      <button class="lang-opt" data-value="en">🇺🇸 English</button>
+      <button class="lang-opt" data-value="pl">🇵🇱 Polski</button>
+    </div>
+  </div>
+
+ <div class="clock-wrapper">
+    <img src="moon.png" alt="Moon" class="moon-overlay">
+    <img src="sun.png" alt="Sun" class="sun-overlay">
+
+    <div class="clock-container">
+      <div class="clock-label">Київ, Україна</div>
+      <div id="ukraine-clock">00:00:00</div>
+      <div id="ukraine-date">Завантаження...</div>
+
+      <a href="#" target="_blank" class="weather-link-container" id="main-weather-link">
+        <div class="weather-divider"></div>
+        <div class="weather-content">
+          <span id="current-city" class="weather-city">Київ:</span>
+          <span id="current-temp" class="weather-temp">+7°C</span>
+          <span class="weather-icon">☁️</span>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <script src="clock.js" defer></script>
+</body>
+</html>
